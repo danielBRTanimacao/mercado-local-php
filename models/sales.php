@@ -1,6 +1,5 @@
 <?php
     $dbname = __DIR__ . "/../sales.db";
-
     $conn = new SQLite3($dbname);
 
     $sql = "CREATE TABLE IF NOT EXISTS sales (
@@ -13,6 +12,5 @@
         dateBuy TEXT NOT NULL,
         dateComponentCreated TEXT DEFAULT (datetime('now', 'localtime'))
     )";
-    
     $conn->exec($sql);
 ?>

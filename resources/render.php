@@ -18,7 +18,7 @@ function renderAside($routeDigited) {
     echo '
     <aside class="w-64 bg-gray-900 text-white p-5 space-y-6">
         <h1 class="text-2xl font-bold">Dashboard</h1>
-        <nav class="space-y-4">
+        <nav class="space-y-4 flex flex-col">
             <a href="/public" class="w-full text-left p-2 rounded ' . setHtml("index", $routeDigited) . '">Principal</a>
             <a href="/public/finance.php" class="w-full text-left p-2 rounded ' . setHtml("finance", $routeDigited) . '">Finances</a>
         </nav>
