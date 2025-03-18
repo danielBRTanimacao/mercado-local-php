@@ -2,12 +2,10 @@
 <html lang="pt-br">
 <?php 
     include __DIR__ . '/../resources/render.php';
-    include __DIR__ . '/../models/sales.php';
+    include __DIR__ . '/../model/modelSales.php';
     renderHead("Painel principal");
 
-    $db = new SQLite3(__DIR__ . '/../sales.db');
-
-
+    $dbSales = new modelSales();
     $result = $db->query("SELECT * FROM sales");
 
     $sales = [];
