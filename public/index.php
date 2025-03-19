@@ -42,7 +42,6 @@
                             <th class="border p-3">KiloGram</th>
                             <th class="border p-3">Preço</th>
                             <th class="border p-3">Data de Compra</th>
-                            <th class="border p-3">Criado em</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,7 +54,6 @@
                                 <td class="border p-3"><?php echo $row['kiloGram']; ?> kg</td>
                                 <td class="border p-3 font-bold text-green-600">R$ <?php echo number_format($row['price'], 2, ',', '.'); ?></td>
                                 <td class="border p-3"><?php echo $row['dateBuy']; ?></td>
-                                <td class="border p-3"><?php echo $row['dateComponentCreated']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -93,11 +91,6 @@
                 <div class="mt-4">
                     <label for="id_price" class="block text-sm font-medium text-gray-700">Preço:</label>
                     <input type="number" step="0.01" name="price" id="id_price" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                </div>
-
-                <div class="mt-4">
-                    <label for="id_dateBuy" class="block text-sm font-medium text-gray-700">Data da Compra:</label>
-                    <input type="date" name="dateBuy" id="id_dateBuy" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
                 </div>
 
                 <div class="mt-6 flex justify-between">

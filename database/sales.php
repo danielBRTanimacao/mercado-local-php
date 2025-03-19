@@ -9,8 +9,7 @@
         name TEXT NOT NULL,
         kiloGram REAL NOT NULL,
         price REAL NOT NULL,
-        dateBuy TEXT NOT NULL,
-        dateComponentCreated TEXT DEFAULT (datetime('now', 'localtime'))
+        dateBuy TEXT DEFAULT (datetime('now', 'localtime'))
     )";
     $conn->exec($sql);
 ?>
