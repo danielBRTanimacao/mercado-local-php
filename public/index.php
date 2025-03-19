@@ -19,6 +19,15 @@
     <main class="flex-1 p-10">
         <h2 class="text-2xl font-bold">Bem-vindo ao Painel</h2>
         <p class="mt-2 text-gray-600">Aqui é onde seu conteúdo de venda aparece.</p>
+        <aside>
+            <button 
+                id="openModal" 
+                class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none " 
+                type="button"
+            >
+                Adicionar
+            </button>
+        </aside>
 
         <div class="mt-6 bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-bold mb-4">Lista de Vendas</h3>
@@ -53,9 +62,66 @@
                 </table>
             </div>
         </div>
-    </main>s
+    </main>
+
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+            <h2 class="text-xl font-semibold">Adicionar venda</h2>
+            <p class="mt-2 text-gray-600">Adicione as informações.</p>
+            
+            <form action="/models/create.php" method="post">
+                <div class="mt-4">
+                    <label for="id_name" class="block text-sm font-medium text-gray-700">Nome do Produto:</label>
+                    <input type="text" name="name" id="id_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+
+                <div class="mt-4">
+                    <label for="id_quantity" class="block text-sm font-medium text-gray-700">Quantidade:</label>
+                    <input type="number" name="quantity" id="id_quantity" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+
+                <div class="mt-4">
+                    <label for="id_brand" class="block text-sm font-medium text-gray-700">Marca:</label>
+                    <input type="text" name="brand" id="id_brand" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div class="mt-4">
+                    <label for="id_kiloGram" class="block text-sm font-medium text-gray-700">Peso (Kg):</label>
+                    <input type="number" step="0.01" name="kiloGram" id="id_kiloGram" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+
+                <div class="mt-4">
+                    <label for="id_price" class="block text-sm font-medium text-gray-700">Preço:</label>
+                    <input type="number" step="0.01" name="price" id="id_price" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+
+                <div class="mt-4">
+                    <label for="id_dateBuy" class="block text-sm font-medium text-gray-700">Data da Compra:</label>
+                    <input type="date" name="dateBuy" id="id_dateBuy" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button type="button" id="closeModal" class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700">Cancelar</button>
+                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Adicionar Venda</button>
+                </div>
+            </form>
+        </div>
+    </div>
+   
     <script>
-        document.querySelector("")
+        document.getElementById('openModal').addEventListener('click', () => {
+            document.getElementById('modal').classList.remove('hidden');
+        });
+
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('modal').classList.add('hidden');
+        });
+
+        document.getElementById('modal').addEventListener('click', (event) => {
+            if (event.target === document.getElementById('modal')) {
+                document.getElementById('modal').classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
