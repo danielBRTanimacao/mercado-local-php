@@ -39,3 +39,15 @@ update suas dependencias e repositorios
 sudo apt update
 sudo apt upgrade
 ```
+
+instalando o PHP
+
+```
+sudo apt install php
+```
+
+dependencia banco de dados
+
+```
+sudo apt install php-sqlite3
+```
