@@ -2,10 +2,10 @@
 <html lang="pt-br">
 <?php 
     include __DIR__ . '/../resources/render.php';
-    include __DIR__ . '/../model/modelSales.php';
+    include __DIR__ . '/../database/sales.php';
     renderHead("Painel principal");
 
-    $dbSales = new modelSales();
+    $db = new SQLite3(__DIR__ . '/../sales.db');
     $result = $db->query("SELECT * FROM sales");
 
     $sales = [];
@@ -23,7 +23,7 @@
         <div class="mt-6 bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-bold mb-4">Lista de Vendas</h3>
             <div class="overflow-x-auto">
-                <table class="w-full border border-gray-300 rounded-lg overflow-hidden">
+                <table class="w-full rounded-lg overflow-hidden">
                     <thead>
                         <tr class="bg-gray-800 text-white">
                             <th class="border p-3">ID</th>
@@ -39,7 +39,7 @@
                     <tbody>
                         <?php foreach ($sales as $row) { ?>
                             <tr class="border text-center bg-gray-100 hover:bg-gray-200">
-                                <td class="border p-3"><?php echo $row['id']; ?></td>
+                                <td class="border p-3"><a class="text-blue-600 dark:text-blue-500 hover:underline" href="/public/sale.php/<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a></td>
                                 <td class="border p-3"><?php echo $row['name']; ?></td>
                                 <td class="border p-3"><?php echo $row['brand'] ? $row['brand'] : '<span class="text-gray-500 italic">Sem marca</span>'; ?></td>
                                 <td class="border p-3"><?php echo $row['quantity']; ?></td>
@@ -53,6 +53,9 @@
                 </table>
             </div>
         </div>
-    </main>
+    </main>s
+    <script>
+        document.querySelector("")
+    </script>
 </body>
 </html>
