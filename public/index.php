@@ -45,6 +45,9 @@
                 <table class="w-full rounded-lg overflow-hidden">
                     <thead>
                         <tr class="bg-gray-800 text-white">
+                            <th class="border p-3 hidden">
+                                <button type="button">Cancelar?</button>
+                            </th>
                             <th class="border p-3">ID</th>
                             <th class="border p-3">Nome</th>
                             <th class="border p-3">Marca</th>
@@ -57,7 +60,14 @@
                     <tbody>
                         <?php foreach ($sales as $row) { ?>
                             <tr class="border text-center bg-gray-100 hover:bg-gray-200">
-                                <td class="border p-3"><a class="text-blue-600 dark:text-blue-500 hover:underline" href="/public/sale.php/<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a></td>
+                                <td class="border p-3 hidden">
+                                    <input type="checkbox" name="check" id="checkersDelete">
+                                </td>
+                                <td class="border p-3">
+                                    <a class="text-blue-600 dark:text-blue-500 hover:underline" href="/public/sale.php/<?php echo $row['id']; ?>">
+                                        <?php echo $row['id']; ?>
+                                    </a>
+                                </td>
                                 <td class="border p-3"><?php echo $row['name']; ?></td>
                                 <td class="border p-3"><?php echo $row['brand'] ? $row['brand'] : '<span class="text-gray-500 italic">Sem marca</span>'; ?></td>
                                 <td class="border p-3"><?php echo $row['quantity']; ?></td>
@@ -111,20 +121,6 @@
         </div>
     </div>
    
-    <script>
-        document.getElementById('openModal').addEventListener('click', () => {
-            document.getElementById('modal').classList.remove('hidden');
-        });
-
-        document.getElementById('closeModal').addEventListener('click', () => {
-            document.getElementById('modal').classList.add('hidden');
-        });
-
-        document.getElementById('modal').addEventListener('click', (event) => {
-            if (event.target === document.getElementById('modal')) {
-                document.getElementById('modal').classList.add('hidden');
-            }
-        });
-    </script>
+    <script src="../public/js/index.js"></script>
 </body>
 </html>
