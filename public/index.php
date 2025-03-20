@@ -45,9 +45,7 @@
                 <table class="w-full rounded-lg overflow-hidden">
                     <thead>
                         <tr class="bg-gray-800 text-white">
-                            <th class="border p-3 hidden">
-                                <button type="button">Cancelar?</button>
-                            </th>
+                            <th class="border p-3 hidden" id="hiddeTd">Deletar</th>
                             <th class="border p-3">ID</th>
                             <th class="border p-3">Nome</th>
                             <th class="border p-3">Marca</th>
@@ -58,9 +56,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <button>CONFIRMAR</button>
                         <?php foreach ($sales as $row) { ?>
                             <tr class="border text-center bg-gray-100 hover:bg-gray-200">
-                                <td class="border p-3 hidden">
+                                <td class="border p-3 hidden" id="hiddeTd">
                                     <input type="checkbox" name="check" id="checkersDelete">
                                 </td>
                                 <td class="border p-3">

@@ -12,5 +12,21 @@ document.getElementById("modal").addEventListener("click", (event) => {
     }
 });
 
+let btnClicked = false;
 const allCheckers = document.querySelectorAll("input#checkersDelete");
-document.querySelector("button#showDelete").addEventListener("click", () => {});
+const hiddeTds = document.querySelectorAll("#hiddeTd");
+document.querySelector("button#showDelete").addEventListener("click", (btn) => {
+    if (!btnClicked) {
+        btn.target.innerHTML = "Cancelar";
+        hiddeTds.forEach((e) => {
+            e.classList.remove("hidden");
+        });
+        btnClicked = true;
+    } else {
+        btn.target.innerHTML = "Remover";
+        hiddeTds.forEach((e) => {
+            e.classList.add("hidden");
+        });
+        btnClicked = false;
+    }
+});
