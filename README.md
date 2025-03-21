@@ -6,7 +6,8 @@
 
 ## Tecnologias 🛠️
 
--   PHP:
+-   PHP: É uma linguagem de script embutida em HTML. Grande parte de sua sintaxe é emprestada de C, Java e Perl com alguns recursos exclusivos específicos de PHP incluídos. O objetivo da linguagem é permitir que desenvolvedores web escrevam páginas geradas dinamicamente rapidamente.
+-   Sqlite: Uma biblioteca `in-process` que implementa um `self-contained`, sem servidor, zero-configuração, transacional Mecanismo de banco de dados SQL. O código para SQLite está no domínio público e, portanto, é livre para usar para qualquer finalidade, comercial ou privada. SQLite é o banco de dados mais amplamente implantado no mundo com mais aplicações do que nós podemos contagem, incluindo vários projetos de alto perfil.
 
 ## Como instalar projeto ⚙️
 
@@ -51,3 +52,11 @@ dependencia banco de dados
 ```
 sudo apt install php-sqlite3
 ```
+
+rodando projeto na raiz escolha sua rota de exemplo usarei a `localhsost:8080`
+
+```
+php -S localhost:8080
+```
+
+### Abra o projeto no seu navegador local `localhost:8080/public`
