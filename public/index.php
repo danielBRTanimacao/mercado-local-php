@@ -19,25 +19,64 @@
     <main class="flex-1 p-10">
         <h2 class="text-2xl font-bold">Bem-vindo ao Painel</h2>
         <p class="mt-2 text-gray-600">Aqui é onde seu conteúdo de venda aparece.</p>
-        <aside>
+        <aside class="flex justify-between">
+            <div>
+                <button 
+                    id="openModal" 
+                    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" 
+                    type="button"
+                >
+                    Adicionar
+                </button>
+                <button
+                    id="showDelete"
+                    type="button"
+                    class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                >
+                    Remover
+                </button>
+            </div>
             <button 
-                id="openModal" 
-                class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" 
-                type="button"
-            >
-                Adicionar
-            </button>
-            <button
-                id="showDelete"
-                type="button"
                 class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button"
+                id="id_filter"
             >
-                Remover
-            </button>
-            <button type="button">
                 Filtrar
             </button>
         </aside>
+        <div class="pt-2 hidden container_filters">
+            <form method="get" class="flex">
+                <input 
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                    type="search" 
+                    name="q" 
+                    id="id_search"
+                    placeholder="Digite nome da venda..."
+                >
+                <button 
+                    type="submit"
+                    class="bg-slate-800 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                >
+                    &#128269;
+                </button>
+            </form>
+            <aside class="flex">
+                <div>
+                    <h5 class="text-xl pt-2">Filtrar preço</h5>
+                    <input type="radio" id="bigNChoose" name="filter_chosed" value="big_value">
+                    <label for="bigNChoose">Maior preço</label><br>
+                    <input type="radio" id="minusNChoose" name="filter_chosed" value="minus_value">
+                    <label for="minusNChoose">Menor preço</label><br>
+                </div>
+                <div class="ms-5">
+                    <h5 class="text-xl pt-2">Filtrar data</h5>
+                    <input type="radio" id="bigDChoose" name="filter_chosed" value="big_date">
+                    <label for="bigDChoose">Mais recente</label><br>
+                    <input type="radio" id="minusDChoose" name="filter_chosed" value="minus_date">
+                    <label for="minusDChoose">Mais antigo</label>
+                </div>
+            </aside>
+        </div>
 
         <div class="mt-6 bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-bold mb-4">Lista de Vendas</h3>
