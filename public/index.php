@@ -63,6 +63,10 @@
                         >
                             CONFIRMAR
                         </button>
+                        <div class="hidden selectAll py-2">
+                            <input type="checkbox" name="checkAll" id="SelectAllCheckers">
+                            <span>Selecionar todos</span>
+                        </div>
                         <p class="error hidden p-1 text-red-600">
                             erro
                         </p>
@@ -130,5 +134,6 @@
     </div>
    
     <script src="../public/js/index.js"></script>
+    <script src="../public/js/filters.js"></script>
 </body>
 </html>

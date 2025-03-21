@@ -1,3 +1,4 @@
+// Modal handle
 document.getElementById("openModal").addEventListener("click", () => {
     document.getElementById("modal").classList.remove("hidden");
 });
@@ -12,25 +13,29 @@ document.getElementById("modal").addEventListener("click", (event) => {
     }
 });
 
+// Ações para deletar
 let btnClicked = false;
 const hiddeTds = document.querySelectorAll("#hiddeTd");
 const confirmDelete = document.querySelector("button#confirmDelete");
 
+// Filtro seleciona todos os checkbox
+const selectAllCheckbox = document.querySelector("input#SelectAllCheckers");
+const allCheckers = document.querySelectorAll("input#checkersDelete");
+const selectAllContainer = document.querySelector("div.selectAll");
+
 document.querySelector("button#showDelete").addEventListener("click", (btn) => {
     if (!btnClicked) {
         btn.target.innerHTML = "Cancelar";
-        hiddeTds.forEach((e) => {
-            e.classList.remove("hidden");
-        });
+        hiddeTds.forEach((e) => e.classList.remove("hidden"));
         btnClicked = true;
         confirmDelete.classList.remove("hidden");
+        selectAllContainer.classList.remove("hidden");
     } else {
         btn.target.innerHTML = "Remover";
-        hiddeTds.forEach((e) => {
-            e.classList.add("hidden");
-        });
+        hiddeTds.forEach((e) => e.classList.add("hidden"));
         btnClicked = false;
         confirmDelete.classList.add("hidden");
+        selectAllContainer.classList.add("hidden");
     }
 });
 
@@ -39,6 +44,7 @@ confirmDelete.addEventListener("click", () => {
     const selectedCheckers = document.querySelectorAll(
         "input#checkersDelete:checked"
     );
+
     const ids = Array.from(selectedCheckers)
         .map((checkbox) => {
             let row = checkbox.closest("tr");
@@ -65,5 +71,11 @@ confirmDelete.addEventListener("click", () => {
                 errorP.innerHTML = `Erro ao deletar: ${error}`;
                 errorP.classList.remove("hidden");
             });
+    });
+});
+
+selectAllCheckbox.addEventListener("change", () => {
+    allCheckers.forEach((checkbox) => {
+        checkbox.checked = selectAllCheckbox.checked;
     });
 });
