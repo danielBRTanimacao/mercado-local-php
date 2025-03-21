@@ -56,14 +56,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <button>CONFIRMAR</button>
+                        <button 
+                            type="button" 
+                            class="hidden rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            id="confirmDelete"
+                        >
+                            CONFIRMAR
+                        </button>
                         <?php foreach ($sales as $row) { ?>
                             <tr class="border text-center bg-gray-100 hover:bg-gray-200">
                                 <td class="border p-3 hidden" id="hiddeTd">
                                     <input type="checkbox" name="check" id="checkersDelete">
                                 </td>
                                 <td class="border p-3">
-                                    <a class="text-blue-600 dark:text-blue-500 hover:underline" href="/public/sale.php/<?php echo $row['id']; ?>">
+                                    <a data-id="<?php echo $row['id']; ?>" class="idSales text-blue-600 dark:text-blue-500 hover:underline" href="/public/sale.php/<?php echo $row['id']; ?>">
                                         <?php echo $row['id']; ?>
                                     </a>
                                 </td>
