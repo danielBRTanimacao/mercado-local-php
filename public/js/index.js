@@ -13,7 +13,6 @@ document.getElementById("modal").addEventListener("click", (event) => {
 });
 
 let btnClicked = false;
-const allCheckers = document.querySelectorAll("input#checkersDelete");
 const hiddeTds = document.querySelectorAll("#hiddeTd");
 const confirmDelete = document.querySelector("button#confirmDelete");
 
@@ -36,18 +35,35 @@ document.querySelector("button#showDelete").addEventListener("click", (btn) => {
 });
 
 confirmDelete.addEventListener("click", () => {
-    let ids = Array.from(document.querySelectorAll("a.idSales")).map((a) =>
-        a.getAttribute("data-id")
+    const errorP = document.querySelector("p.error");
+    const selectedCheckers = document.querySelectorAll(
+        "input#checkersDelete:checked"
     );
+    const ids = Array.from(selectedCheckers)
+        .map((checkbox) => {
+            let row = checkbox.closest("tr");
+            let idElement = row.querySelector("a.idSales");
+            return idElement ? idElement.getAttribute("data-id") : null;
+        })
+        .filter((id) => id !== null);
 
-    allCheckers.forEach(() => {
-        ids.forEach((id) => {
-            fetch(`http://localhost:8080/models/delete.php/${id}`, {
-                method: "DELETE",
+    if (ids.length === 0) {
+        errorP.innerHTML = "Nenhum item selecionado para exclusão.";
+        errorP.classList.remove("hidden");
+        return;
+    }
+
+    ids.forEach((id) => {
+        fetch(`http://localhost:8080/models/delete.php/${id}`, {
+            method: "DELETE",
+        })
+            .then((response) => response.json())
+            .then(() => {
+                location.reload();
             })
-                .then((response) => response.json())
-                .then((data) => console.log("Deletado:", data))
-                .catch((error) => console.error("Erro ao deletar:", error));
-        });
+            .catch((error) => {
+                errorP.innerHTML = `Erro ao deletar: ${error}`;
+                errorP.classList.remove("hidden");
+            });
     });
 });

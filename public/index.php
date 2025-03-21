@@ -63,6 +63,9 @@
                         >
                             CONFIRMAR
                         </button>
+                        <p class="error hidden p-1 text-red-600">
+                            erro
+                        </p>
                         <?php foreach ($sales as $row) { ?>
                             <tr class="border text-center bg-gray-100 hover:bg-gray-200">
                                 <td class="border p-3 hidden" id="hiddeTd">
