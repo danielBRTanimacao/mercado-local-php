@@ -12,11 +12,16 @@
     <main class="flex-1 p-10">
         <h2 class="text-2xl font-bold">Bem-vindo ao Painel Finanças</h2>
         <p class="mt-2 text-gray-600">Fique de olho nos seus ganhos diarios.</p>
+        <label for="moneyShow">Mostrar:</label>
+        <select name="moneyShow" id="showMoney">
+            <option value="sale">Vendas</option>
+            <option value="money">Dinheiro</option>
+        </select>
 
         <article>
-        <div style="width: 50%;">
-            <canvas id="myChart"></canvas>
-        </div>
+            <div style="width: 50%;">
+                <canvas id="myChart"></canvas>
+            </div>
 
             <aside class="flex justify-evenly"> 
                 <div>

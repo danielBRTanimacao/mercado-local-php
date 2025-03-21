@@ -36,7 +36,7 @@ const dataDay = {
     datasets: [
         {
             label: "Ganhos",
-            data: [300, 50],
+            data: [1, 15],
             backgroundColor: ["#101828", "rgb(212, 212, 212)"],
             hoverOffset: 4,
         },
@@ -48,7 +48,7 @@ const dataMonth = {
     datasets: [
         {
             label: "Ganhos mensal",
-            data: [56, 23],
+            data: [105, 53],
             backgroundColor: ["#101828", "rgb(212, 212, 212)"],
             hoverOffset: 4,
         },
