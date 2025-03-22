@@ -17,6 +17,9 @@
             <option value="sale">Vendas</option>
             <option value="money">Dinheiro</option>
         </select>
+        <h2 class="text-2xl font-bold text-center hidden error text-red-600">
+            Erro aos buscar os valores.
+        </h2>
 
         <article>
             <div style="width: 50%;">

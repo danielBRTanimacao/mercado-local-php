@@ -39,6 +39,7 @@ document.querySelector("button#showDelete").addEventListener("click", (btn) => {
     }
 });
 
+// Botão para deletar
 confirmDelete.addEventListener("click", () => {
     const errorP = document.querySelector("p.error");
     const selectedCheckers = document.querySelectorAll(
