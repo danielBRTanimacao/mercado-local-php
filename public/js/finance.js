@@ -17,7 +17,7 @@ const getSales = async () => {
         }
 
         const json = response.json();
-        console.log(json);
+        // console.log(json.value);
 
         const dataWeek = {
             labels: [
