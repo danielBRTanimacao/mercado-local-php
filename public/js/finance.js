@@ -9,13 +9,13 @@ const getSales = () => {
         .then((sales) => {
             const dataWeek = {
                 labels: [
+                    "Domingo",
                     "Segunda",
                     "Terça",
                     "Quarta",
                     "Quinta",
                     "Sexta",
                     "Sabado",
-                    "Domingo",
                 ],
                 datasets: [
                     {

@@ -22,7 +22,7 @@
         </h2>
 
         <article>
-            <div style="width: 50%;">
+            <div class="flex items-center justify-center" style="width: 100%; height: 390px;">
                 <canvas id="myChart"></canvas>
             </div>
 
