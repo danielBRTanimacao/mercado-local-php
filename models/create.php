@@ -21,13 +21,13 @@
         $stmt->bindValue(':price', $price, SQLITE3_FLOAT);
 
         if ($stmt->execute()) {
-            echo "Venda adicionada com sucesso!";
+            echo json_encode(["sucesso" => "Venda adicionada com sucesso!"]);
             header("Location: /public/index.php");
             exit;
         } else {
-            echo "Erro ao adicionar a venda.";
+            echo json_encode(["erro" => "Erro ao adicionar venda."]);
         }
     } else {
-        echo "Método inválido.";
+        echo json_encode(["invalido" => "Método inválido."]);
     }
 ?>

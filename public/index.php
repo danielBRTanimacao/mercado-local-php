@@ -70,9 +70,9 @@
                 </div>
                 <div class="ms-5">
                     <h5 class="text-xl pt-2">Filtrar data</h5>
-                    <input type="radio" id="bigDChoose" name="filter_chosed" value="big_date">
+                    <input type="radio" id="bigDChoose" name="filter_chosed_data" value="big_date">
                     <label for="bigDChoose">Mais recente</label><br>
-                    <input type="radio" id="minusDChoose" name="filter_chosed" value="minus_date">
+                    <input type="radio" id="minusDChoose" name="filter_chosed_data" value="minus_date">
                     <label for="minusDChoose">Mais antigo</label>
                 </div>
             </aside>
