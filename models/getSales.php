@@ -6,6 +6,12 @@
     $db = new SQLite3(__DIR__ . '/../sales.db');
 
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        # Essa primeira parte coleta apenas as vendas e guarda no cache
+        # exemplo eu preciso pegar o dia de hj "Domingo"..
+        # conforme vou adicionando vendas no create
+        # ele vai adicionando as vendas de hj no cache o cache vai conter 3 setores
+        # Hj, Mes e a semana
+        
         $week = (
             [
                 "domingo" => 2,
