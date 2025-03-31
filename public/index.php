@@ -6,13 +6,23 @@
     renderHead("Painel principal");
 
     $db = new SQLite3(__DIR__ . '/../sales.db');
-    $result = $db->query("SELECT * FROM sales");
+
+    $searchQuery = isset($_GET['q']) ? trim($_GET['q']) : '';
+
+    if ($searchQuery) {
+        $stmt = $db->prepare("SELECT * FROM sales WHERE name LIKE :searchQuery");
+        $stmt->bindValue(':searchQuery', '%' . $searchQuery . '%', SQLITE3_TEXT);
+        $result = $stmt->execute();
+    } else {
+        $result = $db->query("SELECT * FROM sales");
+    }
 
     $sales = [];
     while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         $sales[] = $row;
     }
 ?>
+
 <body class="flex h-screen bg-gray-100">
     <?php renderAside('index');?>
 
