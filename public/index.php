@@ -57,18 +57,12 @@
         <div class="pt-2 hidden container_filters">
             <form method="get" class="flex">
                 <input 
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                    class="mt-1 block w-full px-3 py-2 rounded border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" 
                     type="search" 
                     name="q" 
                     id="id_search"
                     placeholder="Digite nome da venda..."
                 >
-                <button 
-                    type="submit"
-                    class="bg-slate-800 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                >
-                    &#128269;
-                </button>
             </form>
             <aside class="flex">
                 <div>
@@ -133,8 +127,8 @@
                                 <td class="border p-3"><?php echo $row['brand'] ? $row['brand'] : '<span class="text-gray-500 italic">Sem marca</span>'; ?></td>
                                 <td class="border p-3"><?php echo $row['quantity']; ?></td>
                                 <td class="border p-3"><?php echo $row['kiloGram']; ?> kg</td>
-                                <td class="border p-3 font-bold text-green-600">R$ <?php echo number_format($row['price'], 2, ',', '.'); ?></td>
-                                <td class="border p-3"><?php echo $row['dateBuy']; ?></td>
+                                <td class="border p-3 font-bold text-green-600" id="most-expensive">R$ <?php echo number_format($row['price'], 2, ',', '.'); ?></td>
+                                <td class="border p-3" id="date-buy"><?php echo $row['dateBuy']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
