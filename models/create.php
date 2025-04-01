@@ -21,7 +21,6 @@
         $stmt->bindValue(':price', $price, SQLITE3_FLOAT);
 
         if ($stmt->execute()) {
-            echo json_encode(["sucesso" => "Venda adicionada com sucesso!"]);
             header("Location: /public/index.php");
             exit;
         } else {
