@@ -1,6 +1,6 @@
-# Gerente vendas mercado 🛒
+# Dashboard vendas mercado 🛒
 
-> lorem impsum
+> Projeto para um mercado de laticinio local na cidade, sendo possivel observar as vendas em um dashboard um simples CRUD PHP + SQlite
 
 ![img-project](./img-project/img-project.png)
 
